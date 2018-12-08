@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-ENV ASAN_OPTIONS "detect_leaks=0"
+ENV ASAN_OPTIONS "detect_leaks=0:symbolize=1"
 RUN sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list \
  && apt-get update \
  && apt-get install -y --no-install-recommends \
